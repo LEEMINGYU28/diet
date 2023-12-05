@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+}
+
+.root {
+	background-color: black;
+	width: 1280px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main {
+	font-size: 30px;
+	color: white;
+	width: 280px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+.join {
+	color: white;
+	font-size: 20px;
+	position: relative;
+	top: 0px;
+	width: 280px;
+	height: 100px;
+	right: -4px;
+	text-align: center;
+}
+
+a {
+	cursor: pointer;
+}
+
+.icon{
+	width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	position: relative;
+	top: -100px;
+}

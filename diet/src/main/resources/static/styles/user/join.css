@@ -1,0 +1,43 @@
+.icon {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -280px;
+    left: 139px;
+}
+
+input {
+    width: 280px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    margin-bottom: 10px;
+}
+
+.container {
+    font-size: 25px;
+    border: 2px solid white;
+    padding: 10px;
+    position: relative;
+    top: 65px;
+    right: 139px;
+}
+
+.join-btn {
+    width: 155px;
+    height: 50px;
+    background-color: #5d5b5b;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    left: 55px;
+    top: 11px;
+    font-size: 17px;
+}

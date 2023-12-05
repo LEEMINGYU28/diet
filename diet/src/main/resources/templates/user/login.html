@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head mxlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/user/login.css" />
+</head>
+
+<body>
+    <div class="root">
+        <div class="main">
+            <div class="icon">
+                <img src="styles/img/icon.png" style="height: 100px;">
+                <h1 style="cursor: default;">YAZIO</h1>
+            </div>
+        </div>
+        <div class="join">
+            <form action="/user/login" method="post" class="d-flex align-items-center mb-0" id="login-form">
+
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-sm" placeholder="ID" id="id" name="userId" />
+                    <input type="password" class="form-control
+                        form-control-sm" placeholder="password" id="password" name="password" />
+                </div>
+                <a href="/user/regist">
+                    <button class="login-btn">로그인</button>
+                </a>
+            </form>
+            <hr style="width: 155px;" />
+            <a>회원가입</a>
+        </div>
+    </div>
+</body>
+
+</html>

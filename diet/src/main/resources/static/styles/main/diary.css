@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    background-color: #141414e8;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    background: #111926;
+    width: 1024px;
+    height: 100vh;
+    border-radius: 5%;
+    border: 2px solid white;
+
+}
+.summary{
+    width: 100%;
+    height: 400px;
+    top: 180px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.summary-main{
+    background: #1e2a36;
+    width: 900px;
+    height: 85%;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+}
+.chart-style{
+    width: 300px;
+    
+}

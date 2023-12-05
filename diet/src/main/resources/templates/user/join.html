@@ -1,0 +1,103 @@
+<html mxlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="joinFragmentHead">
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/user/join.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css" integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha512-D5/oUZrMTZE/y4ldsD6UOeuPR4lwjLnfNMWkjC0pffPTCVlqzcHTNvkn3dhL7C0gYifHQJAIrRTASbMvLmpEug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css" integrity="sha512-aQb0/doxDGrw/OC7drNaJQkIKFu6eSWnVMAwPN64p6sZKeJ4QCDYL42Rumw2ZtL8DB9f66q4CnLIUnAw28dEbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css" integrity="sha512-aQb0/doxDGrw/OC7drNaJQkIKFu6eSWnVMAwPN64p6sZKeJ4QCDYL42Rumw2ZtL8DB9f66q4CnLIUnAw28dEbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.standalone.min.css" integrity="sha512-t+00JqxGbnKSfg/4We7ulJjd3fGJWsleNNBSXRk9/3417ojFqSmkBfAJ/3+zpTFfGNZyKxPVGwWvaRuGdtpEEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="root">
+        <div class="main">
+            <div class="icon">
+                <img src="styles/img/icon.png" style="height: 100px;">
+                <h1 style="cursor: default;">YAZIO</h1>
+            </div>
+        <div th:fragment="registFragment" class="container">
+            <form action="/user/regist" method="post" class="row" id="regist-form">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="user-id">ID</span>
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ID"
+                    aria-label="user-id"
+                    aria-hidden="user-id"
+                    name="userId" 
+                    />
+                    <span class="input-group-text" id="password">password</span>
+                    <input
+                    type="password"
+                    class="form-control"
+                    placeholder="password"
+                    aria-label="password"
+                    aria-hidden="password"
+                    name="password" 
+                    />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="name">이름</span>
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    aria-label="name"
+                    aria-describedby="name"
+                    id="name"
+                    name="name"
+                    />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="age">나이(만)</span>
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="나이"
+                    aria-label="age"
+                    aria-describedby="age"
+                    id="age"
+                    name="age"
+                    />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="height">키(신장)</span>
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="height"
+                    aria-label="height"
+                    aria-describedby="height"
+                    id="height"
+                    name="height"
+                    />
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="weight">몸무게</span>
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="weight"
+                    aria-label="weight"
+                    aria-describedby="weight"
+                    id="weight"
+                    name="weight"
+                    />
+                </div>
+                <div class="input-group">
+                    <button class="join-btn">회원가입</button>
+                    </div>
+        </div>
+    </div>
+            </form>
+        </div>
+</body>
+
+</html>
