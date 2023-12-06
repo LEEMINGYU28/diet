@@ -1,18 +1,20 @@
-body{
+body {
     margin: 0;
     background-color: #141414e8;
     display: flex;
     justify-content: center;
 }
-.container{
+
+.container {
     background: #111926;
     width: 1024px;
-    height: 100vh;
+    height: 200vh;
     border-radius: 5%;
     border: 2px solid white;
 
 }
-.summary{
+
+.summary {
     width: 100%;
     height: 400px;
     top: 180px;
@@ -20,15 +22,105 @@ body{
     display: flex;
     justify-content: center;
 }
-.summary-main{
+
+.summary-main {
+    background: #1e2a36;
+    width: 900px;
+    border-radius: 5%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+.nutrition {
     background: #1e2a36;
     width: 900px;
     height: 85%;
     border-radius: 5%;
+}
+
+.nutrition-container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    top: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.chart-style {
+    width: 300px;
+
+}
+
+.center-text-container {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 21%;
+    width: 15%;
+    left: 437px;
     display: flex;
     justify-content: center;
 }
-.chart-style{
-    width: 300px;
-    
+
+#chart8 {
+    width: 290px;
+    height: 335px;
+    position: absolute;
+    top: -70px;
+}
+
+.center-ment {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 37%;
+    right: 445px;
+}
+
+.width-chart0,
+.width-chart1,
+.width-chart2 {
+    position: absolute;
+    width: 23%;
+    top: 53%;
+}
+
+.width-chart0 {
+    left: 83px;
+}
+
+.width-chart1 {
+    left: 388px;
+}
+
+.width-chart2 {
+    right: 83px;
+}
+
+#horizontalBarChart0,
+#horizontalBarChart1,
+#horizontalBarChart2 {
+    height: 78px;
+}
+.water-record-container{
+    background: red;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    top: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.water-record{
+    background: rebeccapurple;
+    width: 900px;
+    height: 85%;
 }

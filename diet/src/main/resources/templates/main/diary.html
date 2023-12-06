@@ -5,97 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script type="text/javascript" charset="utf-8"
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 </head>
 
 <body>
     <div class="root">
-        <div>
-            <label for="inputValue">입력값:</label>
-            <input type="number" id="inputValue" min="1" max="100">
-            <button onclick="updateChart()">업데이트</button>
-        </div>
         <div class="container">
             <div class="summary">
                 <div class="summary-main">
-                    <script type="text/javascript">
-                        var num = 0; // 초기값 설정
-
-                        var data = {
-                            labels: [
-                                "pink"
-                            ],
-                            datasets: [
-                                {
-                                    data: [num, 100 - num], // 초기값 반영
-                                    backgroundColor: [
-                                        "#FF6384",
-                                        "#DDDDDD"
-                                    ],
-                                    hoverBackgroundColor: [
-                                        "#FF6384",
-                                        "#DDDDDD"
-                                    ]
-                                }]
-                        };
-
-                        window.onload = function () {
-                            var ctx8 = $('#chart8').get(0).getContext("2d");
-
-                            window.theChart8 = new Chart(ctx8, {
-                                type: 'doughnut',
-                                data: data,
-                                options: {
-                                    responsive: true,
-                                    legend: {
-                                        display: false
-                                    },
-                                    elements: {
-                                        center: {
-                                            text: num + 'kal',
-                                            fontStyle: 'Helvetica',
-                                            sidePadding: 15
-                                        }
-                                    },
-                                    maintainAspectRatio: false,
-                                    cutoutPercentage: 90,
-                                    animation: false,
-                                    rotation: 1 * Math.PI,
-                                    circumference: 1 * Math.PI
-                                }
-                            });
-                        };
-
-                        // 사용자 입력에 따라 차트를 업데이트하는 함수
-                        function updateChart() {
-                            // 입력값 가져오기
-                            var inputValue = parseInt($('#inputValue').val());
-
-                            // 유효한 입력인지 확인
-                            if (!isNaN(inputValue) && inputValue >= 1 && inputValue <= 100) {
-                                // 입력값만큼 증가
-                                num += inputValue;
-                                // 최대값이 100을 넘지 않도록 제한
-                                num = Math.min(num, 100);
-
-                                // 데이터 업데이트
-                                window.theChart8.data.datasets[0].data = [num, 100 - num];
-
-                                // 중앙 텍스트 업데이트
-                                window.theChart8.options.elements.center.text = num;
-
-                                // 차트 업데이트
-                                window.theChart8.update();
-                            } else {
-                                alert("1부터 100 사이의 정수를 입력하세요.");
-                            }
-                        }
-                    </script>
+                    <script src="/scripts/chart.js"></script>
 
                     <div class="chart-style">
+                        <div class="center-ment">섭취한 칼로리</div>
+                        <div id="centerTextContainer" class="center-text-container">
+                            <span id="width-text">0</span>
+                        </div>
                         <canvas id="chart8"></canvas>
                     </div>
+                    <div class="width-chart0">
+                        <div class="width-ment"></div>
+                        <div id="centerTextContainer" class="center-text-container">
+                            <span id="width-text">0</span>
+                        </div>
+                        <canvas id="horizontalBarChart0"></canvas>
+                    </div>
+                    <div class="width-chart1">
+                        <!-- <div class="width-ment">단백질</div> -->
+                        <div id="centerTextContainer" class="center-text-container">
+                            <span id="width-text">0</span>
+                        </div>
+                        <canvas id="horizontalBarChart1"></canvas>
+                    </div>
+                    <div class="width-chart2">
+                        <!-- <div class="width-ment">지방</div> -->
+                        <div id="centerTextContainer" class="center-text-container">
+                            <span id="width-text">0</span>
+                        </div>
+                        <canvas id="horizontalBarChart2"></canvas>
+                    </div>
                 </div>
+            </div>
+            <div class="nutrition-container">
+                <div class="nutrition">
+                </div>
+            </div>
+            <div class="water-record-container">
+                <div class="warter-record"></div>
             </div>
         </div>
     </div>
