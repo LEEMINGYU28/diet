@@ -12,6 +12,7 @@
 <body>
     <div class="root">
         <div class="container">
+            <div class="summarys">요약</div>
             <div class="summary">
                 <div class="summary-main">
                     <script src="/scripts/chart.js"></script>
@@ -24,37 +25,86 @@
                         <canvas id="chart8"></canvas>
                     </div>
                     <div class="width-chart0">
-                        <div class="width-ment"></div>
-                        <div id="centerTextContainer" class="center-text-container">
-                            <span id="width-text">0</span>
-                        </div>
+                        <div class="width-ment1">탄수화물</div>
                         <canvas id="horizontalBarChart0"></canvas>
+                        <div id="centerTextContainer" class="span-container">
+                        </div>
+                    </div>
+                    <div class="carbohydrate">
+                        <span id="width-text1">0/0g</span>
                     </div>
                     <div class="width-chart1">
-                        <!-- <div class="width-ment">단백질</div> -->
-                        <div id="centerTextContainer" class="center-text-container">
-                            <span id="width-text">0</span>
-                        </div>
+                        <div class="width-ment2">단백질</div>
                         <canvas id="horizontalBarChart1"></canvas>
+                        <div id="centerTextContainer" class="span-container">
+                        </div>
+                    </div>
+                    <div class="protein">
+                        <span id="width-text2">0/0g</span>
                     </div>
                     <div class="width-chart2">
-                        <!-- <div class="width-ment">지방</div> -->
-                        <div id="centerTextContainer" class="center-text-container">
-                            <span id="width-text">0</span>
-                        </div>
+                        <div class="width-ment3">지방</div>
                         <canvas id="horizontalBarChart2"></canvas>
+                        <div id="centerTextContainer" class="span-container">
+                        </div>
+                    </div>
+                    <div class="province">
+                        <span id="width-text3">0/0g</span>
                     </div>
                 </div>
             </div>
+            <div class="title">영양
+                <a class="view-Details">상세정보</a>
+            </div>
+
             <div class="nutrition-container">
                 <div class="nutrition">
+                    <img src="styles/img/moning.png" style="left: 10px; top: 10px;">
+                    <div class="morning">아침
+                        <span id="morning">0kcal</span>
+                    </div>
+                    <hr />
+                    <a class="btn" id="morning-btn"></a>
+
+                    <img src="styles/img/lunch.png" style="left: -77px; top: 11px;">
+                    <div class="lunch">점심
+                        <span id="lunch">0kcal</span>
+                    </div>
+                    <hr />
+                    <a class="btn" id="lunch-btn"></a>
+
+                    <img src="styles/img/dinner.png" style="left: -77px; top: 11px;">
+                    <div class="dinner">저녁
+                        <span id="dinner">0kcal</span>
+                    </div>
+                    <hr />
+                    <a class="btn" id="dinner-btn"></a>
+
+                    <img src="styles/img/snack.png" style="left: -77px; top: 11px;">
+                    <div class="snack">간식
+                        <span id="snack">0kcal</span>
+                    </div>
+                    <hr />
+                    <a class="btn" id="snack-btn"></a>
                 </div>
             </div>
+            <div class="water-record-ment">물 추적기</div>
             <div class="water-record-container">
-                <div class="warter-record"></div>
+                <div class="water-record">
+                    <div class="bottle">
+                        <div class="water-level"></div>
+                        <a class="water-btn" type="button"></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        function fillWater() {
+            var waterLevel = document.querySelector('.water-level');
+            waterLevel.classList.toggle('filled');
+        }
+    </script>
 </body>
 
 </html>

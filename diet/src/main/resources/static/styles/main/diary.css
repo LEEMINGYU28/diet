@@ -8,7 +8,7 @@ body {
 .container {
     background: #111926;
     width: 1024px;
-    height: 200vh;
+    height: 185vh;
     border-radius: 5%;
     border: 2px solid white;
 
@@ -30,6 +30,7 @@ body {
     height: 85%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nutrition {
@@ -107,9 +108,14 @@ body {
 #horizontalBarChart1,
 #horizontalBarChart2 {
     height: 78px;
+    position: absolute;
 }
-.water-record-container{
-    background: red;
+
+.span-container {
+    height: 78px;
+}
+
+.water-record-container {
     width: 100%;
     height: 500px;
     position: relative;
@@ -119,8 +125,237 @@ body {
     justify-content: center;
 }
 
-.water-record{
-    background: rebeccapurple;
+.water-record {
+    background: #26a1e4;
     width: 900px;
     height: 85%;
+    border-radius: 5%;
+}
+
+.province,
+.protein,
+.carbohydrate {
+    width: 23%;
+    height: 38px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 73%;
+}
+
+.province {
+    right: 83px;
+}
+
+.protein {
+    left: 389px;
+}
+
+.carbohydrate {
+    left: 83px;
+}
+
+.width-ment1,
+.width-ment2,
+.width-ment3 {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.morning,
+.lunch,
+.dinner,
+.snack {
+    color: white;
+    width: 13%;
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 195px;
+}
+
+.morning {
+    top: 60px;
+}
+
+.lunch {
+    top: 182px;
+}
+
+.dinner {
+    top: 302px;
+}
+
+.snack {
+    top: 423px;
+}
+
+#morning,
+#lunch,
+#dinner,
+#snack {
+    position: relative;
+    top: 50px;
+    right: 62px;
+}
+
+#lunch-btn,
+#morning-btn,
+#dinner-btn {
+    top: -120px;
+    left: 89%;
+}
+
+#snack-btn {
+    top: -100px;
+    left: 89%;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    position: relative;
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #3498db;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn::before,
+.btn::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+}
+
+.btn::before {
+    width: 5px;
+    height: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn::after {
+    width: 50%;
+    height: 5px;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+}
+
+.water-btn::before,
+.water-btn::after {
+    content: "";
+    position: absolute;
+    background-color: #292929;
+}
+
+.water-btn::before {
+    width: 5px;
+    height: 40%;
+    top: 31%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.water-btn::after {
+    width: 50%;
+    height: 5px;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+}
+.water-btn{
+    cursor: pointer;
+}
+hr {
+    position: relative;
+    top: 10px;
+}
+
+img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.title {
+    color: white;
+    width: 87%;
+    position: relative;
+    top: 175px;
+    font-size: 30px;
+    left: 68px;
+}
+
+.view-Details {
+    color: #195d8d;
+    position: relative;
+    left: 79%;
+}
+
+.summarys {
+    position: relative;
+    color: white;
+    font-size: 30px;
+    top: 10%;
+    left: 7%;
+    width: 88%;
+}
+.water-record-ment{
+    position: relative;
+    color: white;
+    font-size: 30px;
+    top: 209px;
+    left: 67px;
+    width: 87%;
+}
+
+.bottle {
+    position: relative;
+    top: 35px;
+    left: 35px;
+    width: 100px;
+    height: 130px;
+    background-color: #d6d9de;
+    border-radius: 0 0 50% 50%;
+    overflow: hidden;
+}
+
+.bottle:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 50% 50% 0 0;
+}
+.water-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #3498db; /* 초기 물의 색상 */
+    transition: height 0.5s; /* 높이 변경에 대한 애니메이션 효과 추가 */
+}
+.filled {
+    background-color: #3498db; /* 물을 채울 때의 색상 */
+    height: 80%; /* 물의 높이에 맞게 조절하세요 */
 }
