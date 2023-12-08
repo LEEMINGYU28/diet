@@ -17,7 +17,7 @@ body {
 .summary {
     width: 100%;
     height: 400px;
-    top: 180px;
+    top: 75px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -36,15 +36,16 @@ body {
 .nutrition {
     background: #1e2a36;
     width: 900px;
-    height: 85%;
+    height: 91%;
     border-radius: 5%;
 }
 
 .nutrition-container {
     width: 100%;
     height: 600px;
-    position: relative;
-    top: 138px;
+    position: absolute;
+    top: 610px;
+    left: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,12 +58,12 @@ body {
 }
 
 .center-text-container {
-    position: absolute;
+    position: relative;
     color: white;
     font-size: 30px;
-    top: 21%;
-    width: 15%;
-    left: 437px;
+    top: 19%;
+    width: 6%;
+    left: 140px;
     display: flex;
     justify-content: center;
 }
@@ -79,9 +80,9 @@ body {
     justify-content: center;
     color: white;
     font-size: 20px;
-    position: absolute;
-    top: 37%;
-    right: 445px;
+    position: relative;
+    top: 43%;
+    right: 3px;
 }
 
 .width-chart0,
@@ -110,7 +111,9 @@ body {
     height: 78px;
     position: absolute;
 }
-
+#horizontalBarChart1{
+    left: -11px;
+}
 .span-container {
     height: 78px;
 }
@@ -118,8 +121,9 @@ body {
 .water-record-container {
     width: 100%;
     height: 500px;
-    position: relative;
-    top: 180px;
+    position: absolute;
+    top: 131%;
+    left: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,7 +154,7 @@ body {
 }
 
 .protein {
-    left: 389px;
+    left: 378px;
 }
 
 .carbohydrate {
@@ -169,33 +173,37 @@ body {
     font-size: 20px;
 }
 
+.width-ment2{
+    left: -11px;
+}
+
 .morning,
 .lunch,
 .dinner,
 .snack {
     color: white;
-    width: 13%;
+    width: 130px;
     font-size: 30px;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
-    left: 195px;
+    left: 170px;
 }
 
 .morning {
-    top: 60px;
+    top: -82px;
 }
 
 .lunch {
-    top: 182px;
+    top: -81px;
 }
 
 .dinner {
-    top: 302px;
+    top: -78px;
 }
 
 .snack {
-    top: 423px;
+    top: -77px;
 }
 
 #morning,
@@ -210,12 +218,19 @@ body {
 #lunch-btn,
 #morning-btn,
 #dinner-btn {
-    top: -120px;
     left: 89%;
 }
-
+#morning-btn{
+    top: -109px;
+}
+#lunch-btn{
+    top: -188px;  
+}
+#dinner-btn{
+    top: -261px;
+}
 #snack-btn {
-    top: -100px;
+    top: -344px;
     left: 89%;
 }
 
@@ -297,7 +312,7 @@ img {
     color: white;
     width: 87%;
     position: relative;
-    top: 175px;
+    top: 59px;
     font-size: 30px;
     left: 68px;
 }
@@ -312,17 +327,17 @@ img {
     position: relative;
     color: white;
     font-size: 30px;
-    top: 10%;
-    left: 7%;
+    top: 4%;
+    left: 6%;
     width: 88%;
 }
 .water-record-ment{
-    position: relative;
+    position: absolute ;
     color: white;
     font-size: 30px;
-    top: 209px;
-    left: 67px;
-    width: 87%;
+    top: 129%;
+    left: 169px;
+    width: 75%;
 }
 
 .bottle {
@@ -352,10 +367,31 @@ img {
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #3498db; /* 초기 물의 색상 */
-    transition: height 0.5s; /* 높이 변경에 대한 애니메이션 효과 추가 */
+    background-color: #3498db; 
+    transition: height 0.5s; 
 }
 .filled {
-    background-color: #3498db; /* 물을 채울 때의 색상 */
-    height: 80%; /* 물의 높이에 맞게 조절하세요 */
+    background-color: #3498db; 
+    height: 80%; 
+}
+.px-2 {
+    padding-right: 2.5rem!important;
+    padding-left: 2.5rem!important;
+}
+.morning-container,
+.lunch-container,
+.dinner-container{
+    position: relative;
+    border-bottom: solid 1px white;
+    height: 24%;
+}
+.snack-container{
+    position: relative;
+    top: -233px;
+}
+.lunch-container{
+    top: -77px;
+}
+.dinner-container{
+    top: -155px;
 }

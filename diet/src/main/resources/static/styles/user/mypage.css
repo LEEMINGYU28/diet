@@ -1,0 +1,33 @@
+.head{
+    position: relative;
+    left: 30px;
+}
+
+.info-container{
+    position: relative;
+    top: 30px;
+    height: 50%;
+}
+.name,
+.gender,
+.birth-date,
+.height,
+.logout{
+    position: relative;
+    font-size: 30px;
+    color: white;
+    width: 90%;
+    left: 51px;
+    border-bottom: 1px solid white;
+}
+
+.name{
+    top: 167px;
+}
+.gender,
+.birth-date,
+.height,
+.logout{
+    padding-top: 40px;
+    top: 168px;
+}

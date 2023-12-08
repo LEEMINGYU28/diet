@@ -11,4 +11,9 @@ public class DiaryController {
 	public String diary() {
 		return "main/diary";
 	}
+	
+	@GetMapping("/details")
+	public String viewDetails () {
+		return "main/viewDetails";
+	}
 }

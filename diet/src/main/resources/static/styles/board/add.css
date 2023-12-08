@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    background-color: #141414e8;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: #111926;
+    width: 1024px;
+    height: 185vh;
+    border-radius: 5%;
+    border: 2px solid white;
+
+}
+.ck-editor__editable {
+    height: 300px;
+}
+.mb-2{
+    position: relative;
+    top: 245px;
+}

@@ -1,0 +1,32 @@
+.container{
+    height: 99vh;
+}
+
+.add-btn{
+    top: 90%;
+    width: 84%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
+.addboard{
+    width: 35%;
+    border-radius: 25px;
+    background: #0588d6;
+    font-size: 25px;
+    color: white;
+
+}
+tr{
+    color: white;
+    font-size: 30px;
+    position: relative;
+    left: 5px;
+    top: 95px;
+}
+.goadd{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

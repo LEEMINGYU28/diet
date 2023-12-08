@@ -2,14 +2,19 @@
 
 <head th:fragment="headerFragmentHead">
     <link rel="stylesheet" href="/styles/header.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div th:fragment="headerFragment" id="header" class="d-flex justify-content-between align-items-center px-2">
-        <a href="/"><button class="btn btn-secondary btn-sm">다이어리</button></a>
-        <a href="/"><button class="btn btn-secondary btn-sm">식단공유소</button></a>
-        <a href="/"><button class="btn btn-secondary btn-sm">달력</button></a>
-        <a href="/"><button class="btn btn-secondary btn-sm">내정보</button></a>
+        <a href="/diary"><button class="btn-secondary btn-sm">다이어리</button></a>
+        <a href="/board"><button class="btn-secondary btn-sm">식단공유소</button></a>
+        <a href="/"><button class="btn-secondary btn-sm">달력</button></a>
+        <a href="/mypage"><button class="btn-secondary btn-sm">내정보</button></a>
     </div>
 </body>
 
