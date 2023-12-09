@@ -1,0 +1,45 @@
+<html lang="ko" mxlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="calendarFragmentHead">
+    <link rel="stylesheet" href="/styles/calendar.css" />
+    <link rel="stylesheet" href="/styles/main/details.css" />
+</head>
+
+<body>
+    <div th:fragment="calendarFragment">
+        <div class="container">
+            <div class="head">
+            <a class="arrow-prev" href="/diary" style="cursor: pointer;"></a>
+        </div>
+            <div class="calendar-container">
+                <table class="Calendar">
+                    <thead>
+                        <tr>
+                            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                            <td colspan="5">
+                                <span id="calYear"></span>년
+                                <span id="calMonth"></span>월
+                            </td>
+                            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                        </tr>
+                        <tr>
+                            <td>일</td>
+                            <td>월</td>
+                            <td>화</td>
+                            <td>수</td>
+                            <td>목</td>
+                            <td>금</td>
+                            <td>토</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/calendar.js"></script>
+</body>
+
+</html>

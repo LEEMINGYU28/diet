@@ -4,18 +4,57 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .container {
     background: #111926;
     width: 1024px;
-    height: 185vh;
+    height: 99vh;
     border-radius: 5%;
     border: 2px solid white;
 
 }
+
 .ck-editor__editable {
-    height: 300px;
+    height: 350px;
 }
-.mb-2{
+
+.mb-2 {
     position: relative;
-    top: 245px;
+    top: 189px;
+}
+
+.mb-3 {
+    position: relative;
+    top: 185px;
+}
+
+input {
+    width: 500px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+
+.btn-container {
+    position: relative;
+    top: 290px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.btn {
+    width: 35%;
+    border-radius: 25px;
+    background: #0588d6;
+    font-size: 25px;
+    color: white;
+}
+
+.arrow-prev {
+    right: 615px;
 }

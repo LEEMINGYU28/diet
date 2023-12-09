@@ -24,9 +24,11 @@ input {
     font-size: 25px;
     border: 2px solid white;
     padding: 10px;
+    padding-top: 101px;
     position: relative;
-    top: 65px;
+    top: 57px;
     right: 139px;
+    height: 672px;
 }
 
 .join-btn {
@@ -40,4 +42,21 @@ input {
     left: 55px;
     top: 11px;
     font-size: 17px;
+}
+.form-controls{
+    position: relative;
+    top: -15px;
+}
+.males{
+    position: relative;
+    top: 31px;
+    right: 70px;
+}
+.form-controls1{
+    position: relative;
+    top: -47px;
+}
+.fmales{
+    position: relative;
+    right: 70px;
 }

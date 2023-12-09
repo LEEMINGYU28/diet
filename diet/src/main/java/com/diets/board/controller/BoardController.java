@@ -18,4 +18,8 @@ public class BoardController {
 	public String boardView() {
 		return "board/view";
 	}
+	@GetMapping("/calendar")
+	public String calendar() {
+		return "layout/calendar";
+	}
 }

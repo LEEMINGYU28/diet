@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/styles/board/add.css" />
     <link rel="stylesheet" href="/styles/main/details.css" />
 </head>
+
 <body>
     <div class="container">
         <div class="head">
@@ -11,27 +12,30 @@
             <a class="arrow-prev" href="/diary" style="cursor: pointer;">
             </a>
         </div>
-    <div th:fragment="addBoardFragment">
-        <form action="/add" method="post">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="title" id="floatingInput" placeholder="제목" />
-                <label for="floatingInput">제목</label>
-            </div>
-            <div class="form-floating mb-2">
-                <textarea class="form-control" name="content" placeholder="글" id="floatingTextarea"></textarea>
-                <!-- <label for="floatingTextarea">내용</label> -->
-            </div>
-            <button class="btn btn-primary">글 올리기</button>
-        </form>
-        <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
-        <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/translations/ko.js"></script>
-        <script>
-            ClassicEditor.create(document.getElementById("floatingTextarea"),{
-                language :"ko",
-                ckfinder:{uploadUrl:"/upload"},
-            });
-                    </script>
+        <div th:fragment="addBoardFragment">
+            <form action="/add" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="title" id="floatingInput" placeholder="제목" />
+                    <label for="floatingInput"></label>
+                </div>
+                <div class="form-floating mb-2">
+                    <textarea class="form-control" name="content" placeholder="글" id="floatingTextarea"></textarea>
+                    <!-- <label for="floatingTextarea">내용</label> -->
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-primary">글 올리기</button>
+                </div>
+            </form>
+            <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+            <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/translations/ko.js"></script>
+            <script>
+                ClassicEditor.create(document.getElementById("floatingTextarea"), {
+                    language: "ko",
+                    ckfinder: { uploadUrl: "/upload" },
+                });
+            </script>
+        </div>
     </div>
-</div>
 </body>
+
 </html>

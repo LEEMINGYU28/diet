@@ -26,7 +26,28 @@ tr{
     top: 95px;
 }
 .goadd{
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: center;
+    position: relative;
+    left: -40px;
+}
+a {
+	color: white; /* 링크 색상 */
+	text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 방문한 링크 스타일 */
+a:visited {
+	color: white; /* 방문한 링크 색상 */
+}
+
+/* 마우스를 가져다 댔을 때 링크 스타일 */
+a:hover {
+	color: white; /* 호버 시 링크 색상 */
+}
+
+/* 클릭한 링크 스타일 */
+a:active {
+	color: white; /* 클릭 시 링크 색상 */
 }
