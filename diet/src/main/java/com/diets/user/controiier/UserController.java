@@ -29,7 +29,11 @@ public class UserController {
 	}
 
 	@GetMapping("/join")
-	public String joins() {
+	public String regist(Model model) {
+//		model.addAttribute("title","회원가입");
+//		model.addAttribute("path","/user/join");
+//		model.addAttribute("content","registFragment");
+//		model.addAttribute("contentHead","registFragmentHead");
 		return "user/join";
 	}
 

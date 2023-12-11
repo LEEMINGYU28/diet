@@ -1,7 +1,6 @@
 <html mxlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="joinFragmentHead">
-    <head th:replace="~{/layout/modal :: modalFragmentHead}"></head>
     <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/user/join.css" />
     <link rel="stylesheet"
@@ -43,7 +42,6 @@
                 <h1 style="cursor: default;">YAZIO</h1>
             </div>
             <div th:fragment="registFragment" class="container">
-                <div id="modal" th:replace="~{/layout/modal :: modalFragment}"></div>
                 <form action="/user/regist" method="post" class="row" id="regist-form">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="user-id">ID</span>

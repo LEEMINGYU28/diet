@@ -3,49 +3,55 @@ body {
     background-color: #141414e8;
     display: flex;
     justify-content: center;
+
 }
 
 .container {
     background: #111926;
     width: 1024px;
     height: 185vh;
-    border-radius: 5%;
+    border-radius: 35px;
     border: 2px solid white;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.text-container {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: -73px;
 
 }
 
 .summary {
     width: 100%;
-    height: 400px;
     top: 75px;
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 45px;
 }
 
 .summary-main {
     background: #1e2a36;
-    width: 900px;
-    border-radius: 5%;
-    height: 85%;
-    display: flex;
-    justify-content: center;
+    width: 93%;
+    border-radius: 35px;
     flex-wrap: wrap;
 }
 
 .nutrition {
     background: #1e2a36;
-    width: 900px;
+    width: 93%;
     height: 91%;
-    border-radius: 5%;
+    border-radius: 35px;
 }
 
 .nutrition-container {
+    position: relative;
     width: 100%;
-    height: 600px;
-    position: absolute;
-    top: 610px;
-    left: 2px;
+    height: 30%;
+    top: 9%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +59,9 @@ body {
 
 
 .chart-style {
-    width: 300px;
+    height: 200px;
+    width: 100%;
+    margin-top: -23px;
 
 }
 
@@ -69,28 +77,19 @@ body {
 }
 
 #chart8 {
-    width: 290px;
-    height: 335px;
-    position: absolute;
-    top: -70px;
+    position: relative;
 }
 
 .center-ment {
-    display: flex;
-    justify-content: center;
     color: white;
     font-size: 20px;
-    position: relative;
-    top: 43%;
-    right: 3px;
 }
 
 .width-chart0,
 .width-chart1,
 .width-chart2 {
-    position: absolute;
     width: 23%;
-    top: 53%;
+    height: 50%;
 }
 
 .width-chart0 {
@@ -109,21 +108,21 @@ body {
 #horizontalBarChart1,
 #horizontalBarChart2 {
     height: 78px;
-    position: absolute;
 }
-#horizontalBarChart1{
+
+#horizontalBarChart1 {
     left: -11px;
 }
+
 .span-container {
     height: 78px;
 }
 
 .water-record-container {
     width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 131%;
-    left: 2px;
+    height: 30%;
+    position: relative;
+    top: 9%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,22 +130,20 @@ body {
 
 .water-record {
     background: #26a1e4;
-    width: 900px;
+    margin-top: 70px;
+    width: 93%;
     height: 85%;
-    border-radius: 5%;
+    border-radius: 35px;
 }
 
 .province,
 .protein,
 .carbohydrate {
-    width: 23%;
-    height: 38px;
+    width: 100%;
     color: white;
     font-size: 25px;
     display: flex;
     justify-content: center;
-    position: absolute;
-    top: 73%;
 }
 
 .province {
@@ -161,10 +158,16 @@ body {
     left: 83px;
 }
 
+.width-cantainer {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .width-ment1,
 .width-ment2,
 .width-ment3 {
-    position: absolute;
     width: 100%;
     top: 10px;
     color: white;
@@ -173,7 +176,7 @@ body {
     font-size: 20px;
 }
 
-.width-ment2{
+.width-ment2 {
     left: -11px;
 }
 
@@ -214,25 +217,18 @@ body {
     top: 50px;
     right: 62px;
 }
+.moning-btn,
+.lunch-btn,
+.dinner-btn,
+.snack-btn{
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: end;
+    margin-top: -145px;
+}
 
-#lunch-btn,
-#morning-btn,
-#dinner-btn {
-    left: 89%;
-}
-#morning-btn{
-    top: -109px;
-}
-#lunch-btn{
-    top: -188px;  
-}
-#dinner-btn{
-    top: -261px;
-}
-#snack-btn {
-    top: -344px;
-    left: 89%;
-}
+
 
 .btn,
 .btn:link,
@@ -274,7 +270,6 @@ body {
 .water-btn::before,
 .water-btn::after {
     content: "";
-    position: absolute;
     background-color: #292929;
 }
 
@@ -293,9 +288,11 @@ body {
     left: 25%;
     transform: translateY(-50%);
 }
-.water-btn{
+
+.water-btn {
     cursor: pointer;
 }
+
 hr {
     position: relative;
     top: 10px;
@@ -306,15 +303,18 @@ img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    left: 15px;
+    top: 10px;
 }
 
 .title {
     color: white;
-    width: 87%;
-    position: relative;
-    top: 59px;
+    width: 93%;
+    height: 50px;
     font-size: 30px;
-    left: 68px;
+    position: absolute;
+    right: top;
+    top: -5%;
 }
 
 .view-Details {
@@ -327,17 +327,18 @@ img {
     position: relative;
     color: white;
     font-size: 30px;
-    top: 4%;
-    left: 6%;
-    width: 88%;
+    top: -13%;
+    left: 0%;
+    width: 100%;
 }
-.water-record-ment{
-    position: absolute ;
+
+.water-record-ment {
     color: white;
     font-size: 30px;
-    top: 129%;
-    left: 169px;
-    width: 75%;
+    top: -11%;
+    width: 100%;
+    position: relative;
+    display: flex;
 }
 
 .bottle {
@@ -353,7 +354,7 @@ img {
 
 .bottle:before {
     content: "";
-    position: absolute;
+
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -361,37 +362,55 @@ img {
     height: 30px;
     border-radius: 50% 50% 0 0;
 }
+
 .water-level {
-    position: absolute;
+
     bottom: 0;
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #3498db; 
-    transition: height 0.5s; 
+    background-color: #3498db;
+    transition: height 0.5s;
 }
+
 .filled {
-    background-color: #3498db; 
-    height: 80%; 
+    background-color: #3498db;
+    height: 80%;
 }
+
 .px-2 {
-    padding-right: 2.5rem!important;
-    padding-left: 2.5rem!important;
+    padding-right: 2.5rem !important;
+    padding-left: 2.5rem !important;
 }
+
 .morning-container,
 .lunch-container,
-.dinner-container{
-    position: relative;
+.dinner-container {
     border-bottom: solid 1px white;
-    height: 24%;
+    height: 25%;
 }
-.snack-container{
-    position: relative;
-    top: -233px;
-}
-.lunch-container{
+
+.lunch-container {
     top: -77px;
 }
-.dinner-container{
+
+.dinner-container {
     top: -155px;
+}
+
+.width-chart-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #dedede;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.width-chart-bar .width-bar1 {
+    width: 72%;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #4F98FF;
+    color: #111;
 }

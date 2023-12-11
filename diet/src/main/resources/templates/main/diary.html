@@ -9,102 +9,104 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
     <script type="text/javascript" charset="utf-8"
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="/scripts/chart.js"></script>
 </head>
 
 <body>
     <div class="root">
         <div class="container">
             <div id="header" th:replace="~{/layout/header :: headerFragment}"></div>
-            <div class="summarys">요약</div>
             <div class="summary">
                 <div class="summary-main">
-                    <script src="/scripts/chart.js"></script>
-
+                    <div class="summarys">요약</div>
                     <div class="chart-style">
-                        <div class="center-ment">섭취한 칼로리</div>
-                        <div id="centerTextContainer" class="center-text-container">
-                            <span id="width-text">0</span>
-                        </div>
                         <canvas id="chart8"></canvas>
+                        <div class="text-container">
+                            <span id="width-text">0</span>
+                            <div class="center-ment">섭취한 칼로리</div>
+                        </div>
                     </div>
                     <div class="width-cantainer">
                         <div class="width-chart0">
                             <div class="width-ment1">탄수화물</div>
-                            <canvas id="horizontalBarChart0"></canvas>
-                            <div id="centerTextContainer" class="span-container">
+                            <div class="width-chart-bar">
+                                <div class="width-bar1"> </div>
                             </div>
-                        </div>
-                        <div class="carbohydrate">
-                            <span id="width-text1">0/0g</span>
+                            <div class="carbohydrate">
+                                <span id="width-text1">0/0g</span>
+                            </div>
                         </div>
                         <div class="width-chart1">
                             <div class="width-ment2">단백질</div>
-                            <canvas id="horizontalBarChart1"></canvas>
-                            <div id="centerTextContainer" class="span-container">
+                            <div class="width-chart-bar">
+                                <div class="width-bar1"> </div>
                             </div>
-                        </div>
-                        <div class="protein">
-                            <span id="width-text2">0/0g</span>
+                            <div class="protein">
+                                <span id="width-text2">0/0g</span>
+                            </div>
                         </div>
                         <div class="width-chart2">
                             <div class="width-ment3">지방</div>
-                            <canvas id="horizontalBarChart2"></canvas>
-                            <div id="centerTextContainer" class="span-container">
+                            <div class="width-chart-bar">
+                                <div class="width-bar1"> </div>
                             </div>
-                        </div>
-                        <div class="province">
-                            <span id="width-text3">0/0g</span>
+                            <div class="province">
+                                <span id="width-text3">0/0g</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="title">영양
-                <a class="view-Details" href="/details" style="cursor: pointer;">상세정보</a>
             </div>
 
             <div class="nutrition-container">
                 <div class="nutrition">
-
+                    <div class="title-container">
+                        <div class="title">영양
+                            <a class="view-Details" href="/details" style="cursor: pointer;">상세정보</a>
+                        </div>
+                    </div>
                     <div class="morning-container">
-                        <img src="styles/img/moning.png" style="left: 15px; top: 20px;">
+                        <img src="styles/img/moning.png">
                         <div class="morning">아침
                             <span id="morning">0kcal</span>
                         </div>
-
+                        <div class="moning-btn">
+                            <a class="btn" id="morning-btn"></a>
+                        </div>
                     </div>
-                    <a class="btn" id="morning-btn"></a>
-
                     <div class="lunch-container">
-                        <img src="styles/img/lunch.png" style="left: 15px; top: 20px;">
+                        <img src="styles/img/lunch.png">
                         <div class="lunch">점심
                             <span id="lunch">0kcal</span>
                         </div>
-
+                        <div class="lunch-btn">
+                            <a class="btn" id="lunch-btn"></a>
+                        </div>
                     </div>
-                    <a class="btn" id="lunch-btn"></a>
-
                     <div class="dinner-container">
-                        <img src="styles/img/dinner.png" style="left: 15px; top: 20px;">
+                        <img src="styles/img/dinner.png">
                         <div class="dinner">저녁
                             <span id="dinner">0kcal</span>
                         </div>
-
+                        <div class="dinner-btn">
+                            <a class="btn" id="dinner-btn"></a>
+                        </div>
                     </div>
-                    <a class="btn" id="dinner-btn"></a>
-
                     <div class="snack-container">
-                        <img src="styles/img/snack.png" style="left: 15px; top: 20px;">
+                        <img src="styles/img/snack.png" style="top: 19px;">
                         <div class="snack">간식
                             <span id="snack">0kcal</span>
                         </div>
+                        <div class="snack-btn">
+                            <a class="btn" id="snack-btn"></a>
+                        </div>
                     </div>
-                    <a class="btn" id="snack-btn"></a>
 
                 </div>
             </div>
-            <div class="water-record-ment">물 추적기</div>
             <div class="water-record-container">
                 <div class="water-record">
+                    <div class="water-record-ment">물 추적기</div>
                     <div class="bottle">
                         <div class="water-level"></div>
                         <a class="water-btn" type="button"></a>
@@ -113,6 +115,7 @@
             </div>
         </div>
     </div>
+
     <script>
         function fillWater() {
             var waterLevel = document.querySelector('.water-level');
