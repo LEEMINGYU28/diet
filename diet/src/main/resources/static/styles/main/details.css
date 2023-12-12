@@ -1,14 +1,23 @@
-.head{
-    display: flex;
-    justify-content: center;
+.head-container{
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 5%;
+    margin-top: 90px;
     color: white;
+}
+
+.head{
+    position: absolute;
+
+}
+.arrow-container{
+    display: flex;
+    align-items: center;
     position: relative;
-    top: 75px;
-    left: 30px;
+    width: 100%;
 }
 .arrow-prev{
-    position: relative;
     float:left;
     right: 520px;
     width:66px;

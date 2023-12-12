@@ -3,12 +3,9 @@
 }
 
 .add-btn{
-    top: 90%;
-    width: 84%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
+margin-top: 712px;
+height: 5%;
+display: flex;
 }
 .addboard{
     width: 35%;
@@ -26,28 +23,45 @@ tr{
     top: 95px;
 }
 .goadd{
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    position: relative;
-    left: -40px;
 }
 a {
-	color: white; /* 링크 색상 */
-	text-decoration: none; /* 밑줄 제거 */
+	color: white; 
+	text-decoration: none; 
 }
 
-/* 방문한 링크 스타일 */
+
 a:visited {
-	color: white; /* 방문한 링크 색상 */
+	color: white; 
 }
 
-/* 마우스를 가져다 댔을 때 링크 스타일 */
+
 a:hover {
-	color: white; /* 호버 시 링크 색상 */
+	color: white; 
 }
 
-/* 클릭한 링크 스타일 */
+
 a:active {
-	color: white; /* 클릭 시 링크 색상 */
+	color: white; 
 }
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    /* background-color: #ecf0f1; */
+}
+

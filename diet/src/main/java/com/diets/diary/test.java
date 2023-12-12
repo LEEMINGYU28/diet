@@ -1,5 +1,5 @@
 package com.diets.diary;
 
-public class uzi {
+public class test {
 
 }

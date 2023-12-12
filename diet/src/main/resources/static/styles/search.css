@@ -20,8 +20,8 @@ body {
 
 .search-box {
     padding: 10px;
-    position: absolute;
-    top: 50%;
+    position: relative;
+    margin-top: 38px;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 30px;

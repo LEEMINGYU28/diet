@@ -7,11 +7,16 @@
 
 <body>
     <div class="container">
+        <div class="head-container">
         <div class="head">
             <h1>식단 공유하기</h1>
+        </div>
+        <div class="arrow-container">
             <a class="arrow-prev" href="/diary" style="cursor: pointer;">
             </a>
         </div>
+    </div>
+    <div>
         <div th:fragment="addBoardFragment">
             <form action="/add" method="post">
                 <div class="form-floating mb-3">
@@ -35,6 +40,7 @@
                 });
             </script>
         </div>
+    </div>
     </div>
 </body>
 
