@@ -19,7 +19,9 @@ public class BoardService {
 	public void add(Board board) {
 		boardDao.add(board);
 	}
-
+	public Board get(int id) {
+		return boardDao.get(id);
+	}
 //	public Board get(int id) {
 //		return boardDao.get(id);
 //	}

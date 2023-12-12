@@ -3,9 +3,10 @@
 }
 
 .add-btn{
-margin-top: 712px;
-height: 5%;
-display: flex;
+    position: relative;
+    width: 100%;
+    top: 30%;
+    height: 5%;
 }
 .addboard{
     width: 35%;
@@ -61,7 +62,4 @@ th {
     color: #fff;
 }
 
-tr:nth-child(even) {
-    /* background-color: #ecf0f1; */
-}
 

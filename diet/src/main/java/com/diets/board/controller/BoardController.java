@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,7 +56,18 @@ public class BoardController {
 //		model.addAttribute("pageCount", boardService.getPageCount(count));
 		return "board/list";
 	}
-	
+	@GetMapping("/board/{boardId}")
+	public String itemPage(Model model,@PathVariable("boardId") int boardId) {
+		Board board = boardService.get(boardId);
+		
+		model.addAttribute("title", board.getTitle());
+		model.addAttribute("path", "/board/item");
+		model.addAttribute("content", "boardItemFragment");
+		model.addAttribute("contentHead", "boardItemFragmentHead");
+		board.setContent(board.getContent().replace("\n","<br />"));
+		model.addAttribute("board", board);
+		return "board/view";
+	}
 	@PostMapping("/add")
 	public String add(@RequestParam Map<String, String> data, HttpSession session) {
 		if(session.getAttribute("userName") != null) {
