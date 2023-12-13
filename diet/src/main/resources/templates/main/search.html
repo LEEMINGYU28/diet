@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/styles/search.css" />
     <link rel="stylesheet" href="/styles/main/details.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -12,23 +13,30 @@
             <div class="head">
                 <div class="search-box">
                     <input type="text" class="search-txt" name="" placeholder="제품명을 입력하세요.">
-                    <a class="search-btn" href="#">
+                    <a class="search-btn" onclick="performSearch()" style="cursor: pointer;">
                         <i class="fas fa-search"></i>
                     </a>
                 </div>
-                <!-- <h1>식단 공유하기</h1> -->
             </div>
             <div class="arrow-container">
                 <a class="arrow-prev" href="/diary" style="cursor: pointer; right: 488px;">
                 </a>
             </div>
         </div>
-        
+
         <div class="lately">
             <h1>최근</h1>
         </div>
+        <div class="search-results" id="searchResults">
+            <h2>검색 결과</h2>
+            <ul>
+                <li th:each="food : ${searchResults}">
+                    <span th:text="${food.foodName}"></span>
+                </li>
+            </ul>
+        </div>
     </div>
-
+    <script src="/scripts/search.js"></script>
 </body>
 
 </html>

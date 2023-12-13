@@ -17,6 +17,9 @@ body {
 .arrow-prev {
     right: 488px;
 }
+.arrow-container{
+    height: 5px;
+}
 
 .search-box {
     padding: 10px;
@@ -56,7 +59,8 @@ body {
 .search-txt {
     display: flex;
     padding: 0;
-    width: 210px;
+    width: 90%;
+    height: 50px;
     border: none;
     background: none;
     outline: none;
@@ -64,6 +68,7 @@ body {
     font-size: 1rem;
     line-height: 30px;
     transition: .4s;
+    margin-top: -10px;
 }
 
 .lately{
