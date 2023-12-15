@@ -1,6 +1,5 @@
 package com.diets.food.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.diets.food.domain.Food;
 import com.diets.food.service.FoodService;
@@ -22,71 +20,90 @@ public class FoodController {
 
 	@Autowired
 	FoodService foodService;
+
 	@PostMapping("/addFoodToMeal")
-	public String addFoodToMeal(@RequestParam Map<String,String> map,Model model, HttpSession session) {
+	public String addFoodToMeal(@RequestParam Map<String, String> map, Model model, HttpSession session) {
 		try {
-			int userId = Integer.parseInt(session.getAttribute("userId").toString());
-			Food tempFood = new Food(userId);
-					if(map.get("foodName") != null) {
-						tempFood.setFoodName(map.get("foodName"));
-					}
-					if(map.get("brand") != null) {
-						tempFood.setBrand(map.get("brand"));
-					}
-					if(map.get("calorie") != null) {
-						tempFood.setCalorie(map.get("calorie"));
-						model.addAttribute("calorie", map.get("calorie"));
-					}
-					if(map.get("carbohydrate") != null) {
-						tempFood.setCarbohydrate(map.get("carbohydrate"));
-						model.addAttribute("carbohydrate", map.get("carbohydrate"));
-						
-					}
-					if(map.get("protein") != null) {
-						tempFood.setProtein(map.get("protein"));
-						model.addAttribute("protein", map.get("protein"));
-					}
-					if(map.get("fat") != null) {
-						tempFood.setFat(map.get("fat"));
-						 model.addAttribute("fat", map.get("fat"));
-						
-					}
-					if(map.get("mealType") != null) {
-						tempFood.setMealType(Integer.parseInt(map.get("mealType")));
-					}
-				       if (map.get("mealType") != null) {
-				            int mealType = Integer.parseInt(map.get("mealType"));
+			Food tempFood = new Food(Integer.parseInt(session.getAttribute("userId").toString()));
+			if (map.get("foodName") != null) {
+				tempFood.setFoodName(map.get("foodName"));
+			}
+			if (map.get("brand") != null) {
+				tempFood.setBrand(map.get("brand"));
+			}
+			if (map.get("calorie") != null) {
+				tempFood.setCalorie(map.get("calorie"));
+				model.addAttribute("calorie", map.get("calorie"));
+			}
+			if (map.get("carbohydrate") != null) {
+				tempFood.setCarbohydrate(map.get("carbohydrate"));
+				model.addAttribute("carbohydrate", map.get("carbohydrate"));
 
-				            List<Food> foods = foodService.getFoodsByUserIdAndMealType(userId, mealType);
+			}
+			if (map.get("protein") != null) {
+				tempFood.setProtein(map.get("protein"));
+				model.addAttribute("protein", map.get("protein"));
+			}
+			if (map.get("fat") != null) {
+				tempFood.setFat(map.get("fat"));
+				model.addAttribute("fat", map.get("fat"));
 
-				            double totalCalorie = 0.0;
-				            double totalCarbohydrate = 0.0;
-				            double totalProtein = 0.0;
-				            double totalFat = 0.0;
+			}
+			if (map.get("mealType") != null) {
+				tempFood.setMealType(Integer.parseInt(map.get("mealType")));
+			}
 
-				            for (Food food : foods) {
-				                totalCalorie += Double.parseDouble(food.getCalorie());
-				                totalCarbohydrate += Double.parseDouble(food.getCarbohydrate());
-				                totalProtein += Double.parseDouble(food.getProtein());
-				                totalFat += Double.parseDouble(food.getFat());
-				            }
-
-				            model.addAttribute("totalCalorie", totalCalorie);
-				            System.out.println(totalCalorie);
-				            model.addAttribute("totalCarbohydrate", totalCarbohydrate);
-				            model.addAttribute("totalProtein", totalProtein);
-				            model.addAttribute("totalFat", totalFat);
-				        }
-	
 			foodService.add(tempFood);
-			
-			return  "redirect:/?mealType=";
-		}catch(Exception e) {
+
+			return "redirect:/?mealType=";
+		} catch (Exception e) {
 			e.printStackTrace();
-			model.addAttribute("plusError","추가 실패");
-			return  "redirect:/diary";
+			model.addAttribute("plusError", "추가 실패");
+			return "redirect:/diary";
 		}
-	
+
 	}
 
+	@GetMapping("/diary")
+	public String getFoods(Model model, HttpSession session) {
+	    int userId = Integer.parseInt(session.getAttribute("userId").toString());
+
+	    List<Food> foods = foodService.getFoods(userId);
+
+	    if (!foods.isEmpty()) {
+	        Food totalFood = foods.get(0); 
+
+
+	        String allKcal = totalFood.getCalorie();
+	        String allCarbs = totalFood.getCarbohydrate();
+	        String allProtein = totalFood.getProtein();
+	        String allFat = totalFood.getFat();
+
+	        double allKcalDouble = Double.parseDouble(allKcal);
+	        double allCarbsDouble = Double.parseDouble(allCarbs);
+	        double allProteinDouble = Double.parseDouble(allProtein);
+	        double allFatDouble = Double.parseDouble(allFat);
+
+
+	        model.addAttribute("allKcal", (int) allKcalDouble);
+	        model.addAttribute("allCarbs", (int) allCarbsDouble);
+	        model.addAttribute("allProtein", (int) allProteinDouble);
+	        model.addAttribute("allFat", (int) allFatDouble);
+	  
+	        
+	        Double caloriesSumGroup1 = foodService.getCaloriesSum(userId, 1);
+	        Double caloriesSumGroup2 = foodService.getCaloriesSum(userId, 2);
+	        Double caloriesSumGroup3 = foodService.getCaloriesSum(userId, 3);
+	        Double caloriesSumGroup4 = foodService.getCaloriesSum(userId, 4);
+
+
+	        model.addAttribute("caloriesSumGroup1", caloriesSumGroup1);
+	        model.addAttribute("caloriesSumGroup2", caloriesSumGroup2);
+	        model.addAttribute("caloriesSumGroup3", caloriesSumGroup3);
+	        model.addAttribute("caloriesSumGroup4", caloriesSumGroup4);
+	    
+	    }
+
+	    return "main/diary";
+	}
 }

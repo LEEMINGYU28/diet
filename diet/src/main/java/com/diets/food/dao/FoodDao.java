@@ -35,14 +35,36 @@ public class FoodDao {
 					rs.getInt("user_id"));
 		}
 	};
+	private RowMapper<Food> mappers = new RowMapper<Food>() {
+	    @Override
+	    public Food mapRow(ResultSet rs, int rowNum) throws SQLException {
+	        return new Food(
+	                0,  // id
+	                "", // foodName
+	                "", // brand
+	                rs.getString("all_kcal"),  // calorie
+	                rs.getString("all_carbs"), // carbohydrate
+	                rs.getString("all_protein"), // protein
+	                rs.getString("all_fat"), // fat
+	                0, //mealType
+	                0  //user_id
+	        );
+	    }
+	};
 	public void add(Food food) {
 		jdbcTemplate.update(
 				"insert into savefoods (food_name, brand, calorie, carbohydrate, protein, fat, mealType, user_id) values (?, ?, ?, ?, ?, ?, ?,?)",
 				food.getFoodName(), food.getBrand(), food.getCalorie(), food.getCarbohydrate(),
 				food.getProtein(), food.getFat(),food.getMealType(), food.getUserId());
 	}
-    public List<Food> getFoodsByUserIdAndMealType(int userId, int mealType) {
-        String sql = "select * from savefoods where user_id = ? and mealType = ?";
-        return jdbcTemplate.query(sql, mapper, userId, mealType);
+    public List<Food> getFoods(int userId) {
+        String sql = "select sum(calorie) AS all_kcal,sum(carbohydrate) AS all_carbs, sum(protein) AS all_protein, sum(fat) AS all_fat from savefoods WHERE user_id = ?";
+        return jdbcTemplate.query(sql, mappers, userId);
     }
+    public Double getCaloriesSum(int userId, int mealType) {
+        String sql = "select sum(calorie) AS all_kcal from savefoods WHERE user_id = ? AND mealType = ?";
+        return jdbcTemplate.queryForObject(sql, Double.class, userId, mealType);
+    
+    }
+
 }
