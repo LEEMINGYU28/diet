@@ -35,7 +35,6 @@ public class ExcelController {
 	    
 	    @GetMapping("/searchs")
 	    public ResponseEntity<List<Food>> search(@RequestParam("keyword") String keyword,Model model) {
-	    	System.out.println("호출");
 	    	
 	        List<Food> searchResults = foodService.searchFoods(keyword);
 	        model.addAttribute("searchResults", searchResults);

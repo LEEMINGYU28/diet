@@ -24,7 +24,7 @@
                     <div class="chart-style">
                         <canvas id="chart8"></canvas>
                         <div class="text-container">
-                            <span id="width-texts">0 /</span>
+                            <p>Total Calorie: <span th:text="${totalCalorie}"></span></p>
                             <span id="width-texts">[[${session.kcal}]]</span>
                             <div class="center-ment">섭취한 칼로리</div>
                         </div>
@@ -36,7 +36,8 @@
                                 <div id=carbs-bar class="width-bar1"> </div>
                             </div>
                             <div class="carbohydrate">
-                                <span id="width-text1">100g / [[${session.carbs}]]g</span>
+                                <p><span id="width-text1s" th:text="${totalCarbohydrate}"></span></p>
+                                <span id="width-text1">/ [[${session.carbs}]]g</span>
                             </div>
                         </div>
                         <div class="width-chart1">
@@ -54,7 +55,7 @@
                                 <div class="width-bar1"> </div>
                             </div>
                             <div class="province">
-                                <span id="width-text3">0g / [[${session.fat}]]g</span>
+                                <span id="width-text3"> / [[${session.fat}]]g</span>
                             </div>
                         </div>
                     </div>
@@ -155,6 +156,7 @@
         </div>
     </div>
     <script src="/scripts/chart.js"></script>
+    <script src="/scripts/search.js"></script>
     <script src="/scripts/water.js"></script>
 </body>
 

@@ -31,6 +31,7 @@
             <a th:each="food : ${searchResults}"
                 th:onclick="|redirectToMoring('${food.foodName}', '${food.otherData}', '${food.brand}')|">
                 <span th:text="${food.brand + ' (' + food.foodName + ')'}"></span>
+
             </a>
         </div>
         <div class="pagination">
@@ -41,7 +42,8 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="modalTitle"></h2>
-                <p id="modalContent"></p>
+                <div id="modalContent">
+                </div>
             </div>
         </div>
     </div>

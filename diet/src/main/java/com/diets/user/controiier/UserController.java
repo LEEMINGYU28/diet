@@ -1,6 +1,7 @@
 package com.diets.user.controiier;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.diets.user.domain.User;
 import com.diets.user.service.UserService;
@@ -106,6 +108,7 @@ public class UserController {
 		session.removeAttribute("height");
 		session.removeAttribute("weight");
 		session.removeAttribute("gender");
+		session.removeAttribute("kcal");
 		System.out.println("로그아웃 성공");
 		return "redirect:/index";
 	}

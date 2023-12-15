@@ -120,7 +120,28 @@ function openModal(foodName, otherData, brand) {
         success: function (foodInfo) {
             // 가져온 정보를 모달에 표시
             modalTitle.text(foodInfo.brand);
-            modalContent.text(`음식 이름: ${foodInfo.foodName}, 브랜드: ${foodInfo.brand}, 칼로리: ${foodInfo.calorie}, 단백질: ${foodInfo.protein}, 탄수화물: ${foodInfo.carbohydrate}, 지방: ${foodInfo.fat}`);
+            modalContent.html(`
+                <dl>
+                    <dt>음식 이름:</dt>${foodInfo.foodName}
+                    <dt>브랜드:</dt>${foodInfo.brand}
+                    <dt>칼로리:</dt>${foodInfo.calorie}
+                    <dt>탄수화물:</dt>${foodInfo.carbohydrate}
+                    <dt>단백질:</dt>${foodInfo.protein}
+                    <dt>지방:</dt>${foodInfo.fat}
+                </dl>
+            `);
+
+            // 추가하기 버튼 설정
+            var addButton = $('<button></button>').text('추가하기');
+            addButton.attr('id', 'addFoodButton');
+            addButton.click(function () {
+                var selectedMealType = getMealTypeFromUser(); // 사용자로부터 mealType을 어떻게 받을지 함수 호출을 추가
+                addFoodToMeal(foodInfo.foodName, foodInfo.brand, foodInfo.calorie, foodInfo.carbohydrate, foodInfo.protein, foodInfo.fat, selectedMealType);
+            });
+
+            // 모달에 추가 버튼 추가
+            modalContent.append(addButton);
+
             // 모달 표시
             $('#itemModal').css('display', 'block');
         },
@@ -141,4 +162,60 @@ $('#searchResults').on('click', 'li', function () {
 // 모달 닫기
 function closeModal() {
     $('#itemModal').css('display', 'none');
+}
+function getMealTypeFromUser() {
+
+    return 1;
+}
+
+
+
+function addFoodToMeal(foodName, brand, calorie, carbohydrate, protein, fat, mealType) {
+
+    var userInput = prompt('추가할 식사 종류를 선택하세요.\n1: 아침, 2: 점심, 3: 저녁, 4: 간식', '1');
+
+
+    if (userInput === null || isNaN(userInput)) {
+        mealType = 1;
+    } else {
+
+        mealType = parseInt(userInput, 10);
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: '/addFoodToMeal',
+        data: {
+            foodName: foodName,
+            brand: brand,
+            calorie: calorie,
+            carbohydrate: carbohydrate,
+            protein: protein,
+            fat: fat,
+            mealType: mealType
+        },
+        success: function (data) {
+            closeModal();
+            alert('음식이 ' + getMealTypeName(mealType) + '에 추가되었습니다.');
+        },
+        error: function (xhr, status, error) {
+            console.error('음식 추가에 실패했습니다. 상태 코드:', xhr.status);
+            console.error('에러 메시지:', error);
+            alert('음식 추가에 실패했습니다.');
+        }
+    });
+}
+function getMealTypeName(mealType) {
+    switch (mealType) {
+        case 1:
+            return '아침';
+        case 2:
+            return '점심';
+        case 3:
+            return '저녁';
+        case 4:
+            return '간식';
+        default:
+            return '알 수 없음';
+    }
 }
