@@ -25,7 +25,7 @@ public class ExcelController {
 	    @GetMapping("/upload-local")
 	    public String uploadLocalExcel() {
 	        try {
-	            foodService.saveDataFromLocalExcel("C:\\Users\\KGA\\Desktop\\개인프로젝트 UI\\식품.xlsx");
+	            foodService.saveDataFromLocalExcel("C:\\Users\\KGA\\git\\diet\\diet\\src\\main\\java\\com\\diets\\excell\\db.xlsx");
 	            return "main/diary";
 	        } catch (IOException e) {
 	            e.printStackTrace();
