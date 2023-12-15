@@ -1,4 +1,4 @@
-var num = 0; // 초기값 설정
+var num = 0;
 var numBar = 0;
 
 var data = {
@@ -7,7 +7,7 @@ var data = {
     ],
     datasets: [
         {
-            data: [num, 100 - num], // 초기값 반영
+            data: [num, 100 - num],
             backgroundColor: [
                 "#FF6384",
                 "#DDDDDD"
@@ -59,94 +59,5 @@ window.onload = function () {
 
     });
 
-    var ctxBar = $('#horizontalBarChart0').get(0).getContext("2d");
-    window.horizontalBarChart = new Chart(ctxBar, {
-        type: 'horizontalBar',
-        data: dataBar,
-        options: {
-            responsive: true,
-            legend: { display: false },
-            elements: {
-                center: { text: numBar },
-            },
-            maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    display: false,
-                }],
-                yAxes: [{
-                    display: false,
-                }],
-            },
-            animation: false,
-        },
-    });
-    var ctxBar = $('#horizontalBarChart1').get(0).getContext("2d");
-    window.horizontalBarChart = new Chart(ctxBar, {
-        type: 'horizontalBar',
-        data: dataBar,
-        options: {
-            responsive: true,
-            legend: { display: false },
-            elements: {
-                center: { text: numBar },
-            },
-            maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    display: false,
-                }],
-                yAxes: [{
-                    display: false,
-                }],
-            },
-            animation: false,
-        },
-    });
-    var ctxBar = $('#horizontalBarChart2').get(0).getContext("2d");
-    window.horizontalBarChart = new Chart(ctxBar, {
-        type: 'horizontalBar',
-        data: dataBar,
-        options: {
-            responsive: true,
-            legend: { display: false },
-            elements: {
-                center: { text: numBar },
-            },
-            maintainAspectRatio: false,
-            scales: {
-                xAxes: [{
-                    display: false,
-                }],
-                yAxes: [{
-                    display: false,
-                }],
-            },
-            animation: false,
-        },
-    });
 };
 
-
-// 사용자 입력에 따라 차트를 업데이트하는 함수
-function updateChart() {
-    var inputValue = parseInt($('#inputValue').val());
-
-    if (!isNaN(inputValue) && inputValue >= 1 && inputValue <= 100) {
-        numDonut += inputValue;
-        numDonut = Math.min(numDonut, 100);
-        numBar += inputValue;
-        numBar = Math.min(numBar, 100);
-
-        window.donutChart.data.datasets[0].data = [numDonut, 100 - numDonut];
-        $('#centerText').text(numDonut);
-
-        window.horizontalBarChart.data.datasets[0].data = [numBar, 100 - numBar];
-        $('#centerText').text(numBar);
-
-        window.donutChart.update();
-        window.horizontalBarChart.update();
-    } else {
-        alert("1부터 100 사이의 정수를 입력하세요.");
-    }
-}

@@ -29,4 +29,20 @@ public class ExcelService {
         // 특정 키워드를 사용하여 데이터베이스에서 검색
         return foodRepository.findByFoodNameContainingIgnoreCase(keyword);
     }
+    
+    public Food getFoodInfoByName(String foodName) {
+        try {
+            List<Food> searchResults = foodRepository.findByFoodNameContainingIgnoreCase(foodName);
+
+            if (!searchResults.isEmpty()) {
+                return searchResults.get(0);
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 어떤 예외가 발생했는지 로깅 또는 반환을 조정할 수 있습니다.
+            throw new RuntimeException("Error retrieving food information", e);
+        }
+    }
 }

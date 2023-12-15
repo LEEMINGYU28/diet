@@ -27,7 +27,6 @@ public class BoardDAO {
 					rs.getInt("id"),
 					rs.getString("title"),
 					rs.getString("content"),
-					rs.getString("image_path"),
 					rs.getInt("views"), 0, 0,
 					rs.getTimestamp("created_at"),
 					rs.getInt("is_withdrew") == 1,

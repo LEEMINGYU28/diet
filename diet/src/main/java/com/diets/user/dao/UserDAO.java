@@ -27,18 +27,22 @@ public class UserDAO {
 					rs.getString("password"),
 					rs.getString("name"),
 					rs.getString("age"),
-					rs.getInt("height"),
-					rs.getInt("weight"),
+					rs.getString("height"),
+					rs.getString("weight"),
 					rs.getInt("gender"),
+					rs.getString("kcal"),
+					rs.getString("fat"),
+					rs.getString("protein"),
+					rs.getString("carbs"),
 					rs.getTimestamp("created_at"));
 		}
 	};
 
 	public void add(User user) {
 		jdbcTemplate.update(
-				"insert into users (user_id, password, name, age, height, weight, gender) values (?, ?, ?, ?, ?, ?, ?)",
+				"insert into users (user_id, password, name, age, height, weight, gender, kcal, fat, protein, carbs) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 				user.getUserId(), user.getPassword(), user.getName(), user.getAge(), user.getHeight(),
-				user.getWeight(), user.getGender());
+				user.getWeight(), user.getGender(),user.getKcal(),user.getFat(),user.getProtein(),user.getCarbs());
 	}
 	public User get(String userId) {
 		return jdbcTemplate.queryForObject("select * from users where user_id=?", mapper, userId);

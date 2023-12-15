@@ -20,7 +20,6 @@ public class Board {
 	private String title;
 	@NonNull
 	private String content;
-	private String image_path;
 	private int views = 0;
 	private int likes = 0;
 	private int hates = 0;

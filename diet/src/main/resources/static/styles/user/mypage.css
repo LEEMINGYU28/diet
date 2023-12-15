@@ -1,7 +1,4 @@
-.head{
-    position: relative;
-    left: 30px;
-}
+
 
 .info-container{
     position: relative;
@@ -30,4 +27,11 @@
 .logout{
     padding-top: 40px;
     top: 168px;
+}
+.logout-btn{
+    width: 35%;
+    border-radius: 25px;
+    background: #0588d6;
+    font-size: 25px;
+    color: white;
 }

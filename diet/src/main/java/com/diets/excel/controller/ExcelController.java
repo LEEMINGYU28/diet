@@ -46,6 +46,21 @@ public class ExcelController {
 	                ResponseEntity.notFound().build() :
 	                ResponseEntity.ok(searchResults);
 	    }
-
 	    
+	    @GetMapping("/getFoodInfo")
+	    @ResponseBody
+	    public ResponseEntity<Object> getFoodInfo(@RequestParam("foodName") String foodName) {
+	        try {
+	            Food foodResult = foodService.getFoodInfoByName(foodName);
+
+	            if (foodResult != null) {
+	                return ResponseEntity.ok().body(foodResult);
+	            } else {
+	                return ResponseEntity.notFound().build();
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return ResponseEntity.status(500).body("Internal Server Error");
+	        }
+	    } 
 }

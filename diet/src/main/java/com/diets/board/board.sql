@@ -6,6 +6,5 @@ create table boards(
   created_at TIMESTAMP default current_timestamp,
   is_withdrew tinyint,
   user_id int,
- image_path VARCHAR(255),
   foreign key (user_id) references users(id)
 );

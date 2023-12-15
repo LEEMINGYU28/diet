@@ -4,16 +4,18 @@
 
     <head th:replace="~{/layout/header :: headerFragmentHead}"></head>
     <link rel="stylesheet" href="/styles/main/diary.css" />
+    <link rel="stylesheet" href="/styles/main/water.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
     <script type="text/javascript" charset="utf-8"
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="/scripts/chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-    <div class="root">
+    <div id="root" data-max-fat=[[${session.fat}]] data-max-carbs=[[${session.carbs}]]
+        data-max-protein=[[${session.protein}]]>
         <div class="container">
             <div id="header" th:replace="~{/layout/header :: headerFragment}"></div>
             <div class="summary">
@@ -22,7 +24,8 @@
                     <div class="chart-style">
                         <canvas id="chart8"></canvas>
                         <div class="text-container">
-                            <span id="width-text">0</span>
+                            <span id="width-texts">0 /</span>
+                            <span id="width-texts">[[${session.kcal}]]</span>
                             <div class="center-ment">섭취한 칼로리</div>
                         </div>
                     </div>
@@ -30,10 +33,10 @@
                         <div class="width-chart0">
                             <div class="width-ment1">탄수화물</div>
                             <div class="width-chart-bar">
-                                <div class="width-bar1"> </div>
+                                <div id=carbs-bar class="width-bar1"> </div>
                             </div>
                             <div class="carbohydrate">
-                                <span id="width-text1">0/0g</span>
+                                <span id="width-text1">100g / [[${session.carbs}]]g</span>
                             </div>
                         </div>
                         <div class="width-chart1">
@@ -42,7 +45,7 @@
                                 <div class="width-bar1"> </div>
                             </div>
                             <div class="protein">
-                                <span id="width-text2">0/0g</span>
+                                <span id="width-text2">0g / [[${session.protein}]]g</span>
                             </div>
                         </div>
                         <div class="width-chart2">
@@ -51,7 +54,7 @@
                                 <div class="width-bar1"> </div>
                             </div>
                             <div class="province">
-                                <span id="width-text3">0/0g</span>
+                                <span id="width-text3">0g / [[${session.fat}]]g</span>
                             </div>
                         </div>
                     </div>
@@ -71,7 +74,7 @@
                             <span id="morning">0kcal</span>
                         </div>
                         <div class="moning-btn">
-                            <a class="btn" id="morning-btn" href="/search"></a>
+                            <a class="btn" id="morning-btn" th:href="@{/search(mealType=1)}"></a>
                         </div>
                     </div>
                     <div class="lunch-container">
@@ -80,7 +83,7 @@
                             <span id="lunch">0kcal</span>
                         </div>
                         <div class="lunch-btn">
-                            <a class="btn" id="lunch-btn" href="/search"></a>
+                            <a class="btn" id="lunch-btn" th:href="@{/search(mealType=2)}"></a>
                         </div>
                     </div>
                     <div class="dinner-container">
@@ -89,7 +92,7 @@
                             <span id="dinner">0kcal</span>
                         </div>
                         <div class="dinner-btn">
-                            <a class="btn" id="dinner-btn" href="/search"></a>
+                            <a class="btn" id="dinner-btn" th:href="@{/search(mealType=3)}"></a>
                         </div>
                     </div>
                     <div class="snack-container">
@@ -98,7 +101,7 @@
                             <span id="snack">0kcal</span>
                         </div>
                         <div class="snack-btn">
-                            <a class="btn" id="snack-btn" href="/search"></a>
+                            <a class="btn" id="snack-btn" th:href="@{/search(mealType=4)}"></a>
                         </div>
                     </div>
 
@@ -106,22 +109,53 @@
             </div>
             <div class="water-record-container">
                 <div class="water-record">
-                    <div class="water-record-ment">물 추적기</div>
+                    <div class="water-record-ment">물 추적기 하루 물 2L 섭취하기 클릭시 0.25L 씩 증가</div>
                     <div class="bottle">
-                        <div class="water-level"></div>
-                        <a class="water-btn" type="button"></a>
+                        <div class="water-level" id="water-level">
+                            <a class="water-btn" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle2"> 
+                        <div class="water-level" id="water-level2">
+                            <a class="water-btn2" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle3">
+                        <div class="water-level" id="water-level3">
+                            <a class="water-btn3" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle4">
+                        <div class="water-level" id="water-level4">
+                            <a class="water-btn4" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle5">
+                        <div class="water-level" id="water-level5">
+                            <a class="water-btn5" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle6">
+                        <div class="water-level" id="water-level6">
+                            <a class="water-btn6" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle7">
+                        <div class="water-level" id="water-level7">
+                            <a class="water-btn7" type="button"></a>
+                        </div>
+                    </div>
+                    <div class="bottle" id="bottle8">
+                        <div class="water-level" id="water-level8">
+                            <a class="water-btn8" type="button"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function fillWater() {
-            var waterLevel = document.querySelector('.water-level');
-            waterLevel.classList.toggle('filled');
-        }
-    </script>
+    <script src="/scripts/chart.js"></script>
+    <script src="/scripts/water.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@
             <div class="head">
                 <div class="search-box">
                     <input type="text" class="search-txt" name="" placeholder="제품명을 입력하세요.">
-                    <a class="search-btn" onclick="performSearch()" style="cursor: pointer;">
+                    <a class="search-btn" th:onclick="|performSearch()|" style="cursor: pointer;">
                         <i class="fas fa-search"></i>
                     </a>
                 </div>
@@ -25,15 +25,24 @@
         </div>
 
         <div class="lately">
-            <h1>최근</h1>
+            <h1>검색결과</h1>
         </div>
         <div class="search-results" id="searchResults">
-            <h2>검색 결과</h2>
-            <ul>
-                <li th:each="food : ${searchResults}">
-                    <span th:text="${food.foodName}"></span>
-                </li>
+            <a th:each="food : ${searchResults}"
+                th:onclick="|redirectToMoring('${food.foodName}', '${food.otherData}', '${food.brand}')|">
+                <span th:text="${food.brand + ' (' + food.foodName + ')'}"></span>
+            </a>
+        </div>
+        <div class="pagination">
+            <ul id="paginationControls">
             </ul>
+        </div>
+        <div id="itemModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalContent"></p>
+            </div>
         </div>
     </div>
     <script src="/scripts/search.js"></script>

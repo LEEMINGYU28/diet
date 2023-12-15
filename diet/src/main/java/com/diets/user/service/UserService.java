@@ -42,4 +42,7 @@ public class UserService {
 		}
 		return null;
 	}
+	public User get(String UserId) {
+		return userDao.get(UserId);
+	}
 }

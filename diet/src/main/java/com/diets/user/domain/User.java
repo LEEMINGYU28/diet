@@ -28,11 +28,19 @@ public class User {
 	@NonNull
 	private String age;
 	@Nonnull
-	private int height;
+	private String height;
 	@NonNull
-	private int weight;
+	private String weight;
 	@NonNull
 	private int gender;
+	
+	private String kcal;
+	
+	private String fat;
+	
+	private String protein;
+	
+	private String carbs;
 	
 	private Timestamp createdAt;
 	

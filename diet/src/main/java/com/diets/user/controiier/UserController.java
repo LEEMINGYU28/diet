@@ -50,9 +50,22 @@ public class UserController {
 					map.get("password"),
 					map.get("name"),
 					map.get("age"),
-					Integer.parseInt(map.get("height")),
-					Integer.parseInt(map.get("weight")),
+					map.get("height"),
+					map.get("weight"),
 					Integer.parseInt(map.get("gender")));
+					if(map.get("kcal") != null) {
+						tempUser.setKcal(map.get("kcal"));
+					}
+					if(map.get("fat") != null) {
+						tempUser.setFat(map.get("fat"));
+					}
+					if(map.get("protein") != null) {
+						tempUser.setProtein(map.get("protein"));
+					}
+					if(map.get("carbs") != null) {
+						tempUser.setCarbs(map.get("carbs"));
+					}
+					
 			
 			userService.add(tempUser);
 			
@@ -74,7 +87,27 @@ public class UserController {
 		if (tempUser != null) {
 			session.setAttribute("userName", tempUser.getName());
 			session.setAttribute("userId", tempUser.getId());
+			session.setAttribute("kcal", tempUser.getKcal());
+			session.setAttribute("fat", tempUser.getFat());
+			session.setAttribute("protein", tempUser.getProtein());
+			session.setAttribute("carbs", tempUser.getCarbs());
+			session.setAttribute("age", tempUser.getAge());
+			session.setAttribute("height", tempUser.getHeight());
+			session.setAttribute("weight", tempUser.getWeight());
 		}
 		return "redirect:/diary";
 	}
+	@PostMapping("/logout")
+	public String userLogOutPost(@RequestParam Map<String, String> map, HttpSession session) {
+
+		session.removeAttribute("userId");	
+		session.removeAttribute("userName");
+		session.removeAttribute("age");
+		session.removeAttribute("height");
+		session.removeAttribute("weight");
+		session.removeAttribute("gender");
+		System.out.println("로그아웃 성공");
+		return "redirect:/index";
+	}
+
 }

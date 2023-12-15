@@ -1,0 +1,155 @@
+.water-record-container {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    top: 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.water-record {
+    background: #26a1e4;
+    margin-top: 70px;
+    width: 93%;
+    height: 85%;
+    border-radius: 35px;
+}
+.water-record-ment {
+    color: white;
+    font-size: 30px;
+    top: -11%;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+.water-level {
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 62%;
+    background-color: #d6d9de;
+    transition: height 0.5s;
+}
+
+.water-btn,
+.water-btn2,
+.water-btn3,
+.water-btn4,
+.water-btn5,
+.water-btn6,
+.water-btn7,
+.water-btn8 {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    margin-top: 50px;
+}
+
+
+.water-btn::before,
+.water-btn2::before,
+.water-btn3::before,
+.water-btn4::before,
+.water-btn5::before,
+.water-btn6::before,
+.water-btn7::before,
+.water-btn8::before,
+.water-btn::after,
+.water-btn2::after,
+.water-btn3::after,
+.water-btn4::after,
+.water-btn5::after,
+.water-btn6::after,
+.water-btn7::after,
+.water-btn8::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #070707;
+}
+
+.water-btn::before,
+.water-btn2::before,
+.water-btn3::before,
+.water-btn4::before,
+.water-btn5::before,
+.water-btn6::before,
+.water-btn7::before,
+.water-btn8::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.water-btn::after,
+.water-btn2::after,
+.water-btn3::after,
+.water-btn4::after,
+.water-btn5::after,
+.water-btn6::after,
+.water-btn7::after,
+.water-btn8::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.bottle {
+    position: relative;
+    top: 35px;
+    left: 80px;
+    width: 100px;
+    height: 130px;
+    background-color: #d6d9de;
+    border-radius: 0 0 50% 50%;
+    overflow: hidden;
+}
+
+.bottle:before {
+    content: "";
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 50% 50% 0 0;
+}
+
+#bottle2{
+    top: -21%;
+    margin-left: 135px;
+}
+
+#bottle3{
+    top: -50%;
+    margin-left: 270px;
+}
+#bottle4{
+    top: -79%;
+    margin-left: 405px;
+}
+#bottle5{
+    top: -108%;
+    margin-left: 540px;
+}
+#bottle6{
+    top: -137%;
+    margin-left: 675px;
+}
+#bottle7{
+    top: -125%;
+}
+#bottle8{
+    top: -154%;
+    margin-left: 135px;
+}

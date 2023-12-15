@@ -8,26 +8,28 @@
 
 <body>
     <div class="container">
-        <div class="head">
-            <h1>내정보</h1>
-        <a class="arrow-prev" href="/diary" style="cursor: pointer;">
-        </a>
+        <div class="head-container">
+            <div class="head">
+                <h1>내정보</h1>
+            </div>
+            <div class="arrow-container">
+                <a class="arrow-prev" href="/diary" style="cursor: pointer;">
+                </a>
+            </div>
         </div>
         <div class="info-container">
-            <div class="name">
-                이름
+            <div class="name" th:if="${session.userName != null}">[[${session.userName}]] 
             </div>
-            <div class="gender">
-                성별
+            <div class="birth-date" th:if="${session.age != null}">[[${session.age}]] (만)세
             </div>
-            <div class="birth-date">
-                생년월일
+            <div class="height" th:if="${session.height != null}">[[${session.height}]] cm
             </div>
-            <div class="height">
-                키
+            <div class="gender" th:if="${session.weight != null}">[[${session.weight}]] kg
             </div>
             <div class="logout">
-                로그아웃
+                <form action="/logout" method="post" class="logout-form">
+                <a><button class="logout-btn">로그아웃 </button></a>
+            </form>
             </div>
         </div>
     </div>
