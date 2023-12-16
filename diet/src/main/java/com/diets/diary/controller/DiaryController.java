@@ -11,11 +11,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class DiaryController {
 
-//	@GetMapping("/diary")
-//	public String diary(HttpSession session, Model model) {
-//
-//	    return "main/diary";
-//	}
+	@GetMapping("/diary")
+	public String diary(HttpSession session, Model model) {
+
+	    return "main/diary";
+	}
 	@GetMapping("/details")
 	public String viewDetails() {
 		return "main/viewDetails";

@@ -66,5 +66,10 @@ public class FoodDao {
         return jdbcTemplate.queryForObject(sql, Double.class, userId, mealType);
     
     }
+    public Double getmealTypedata(int userId, int mealType) {
+        String sql = "select sum(calorie) AS all_kcal,sum(carbohydrate) AS all_carbs,sum(protein) AS all_protein,sum(fat) AS all_fat from savefoods WHERE user_id = ? AND mealType = ?";
+        return jdbcTemplate.queryForObject(sql, Double.class, userId, mealType);
+    
+    }
 
 }

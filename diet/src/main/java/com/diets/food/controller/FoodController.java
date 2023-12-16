@@ -64,7 +64,7 @@ public class FoodController {
 
 	}
 
-	@GetMapping("/diary")
+	@GetMapping("/diarys")
 	public String getFoods(Model model, HttpSession session) {
 	    int userId = Integer.parseInt(session.getAttribute("userId").toString());
 

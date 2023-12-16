@@ -28,4 +28,7 @@ public class FoodService {
 	public Double getCaloriesSum(int userId, int mealType) {
 		return foodDao.getCaloriesSum(userId, mealType);
 	}
+	public Double getmealTypedata(int userId, int mealType) {
+		return foodDao.getmealTypedata(userId, mealType);
+	}
 }
