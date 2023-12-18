@@ -1,4 +1,12 @@
 var searchResults = [];
+$(document).ready(function () {
+    // 엔터 키 이벤트 핸들러 추가
+    $('.search-txt').keypress(function (e) {
+        if (e.which === 13) { 
+            performSearch();
+        }
+    });
+})
 
 function performSearch() {
     var searchTerm = document.querySelector('.search-txt').value;
@@ -107,18 +115,15 @@ function initializeSearchResults() {
 initializeSearchResults(searchResults.length);
 
 function openModal(foodName, otherData, brand) {
-    // 모달 내용 설정
     var modalTitle = $('#modalTitle');
     var modalContent = $('#modalContent');
 
-    // foodName으로 전체 정보를 가져오는 AJAX 요청 추가
     $.ajax({
         type: 'GET',
         url: '/getFoodInfo',
         data: { foodName: foodName },
         dataType: 'json',
         success: function (foodInfo) {
-            // 가져온 정보를 모달에 표시
             modalTitle.text(foodInfo.brand);
             modalContent.html(`
                 <dl>

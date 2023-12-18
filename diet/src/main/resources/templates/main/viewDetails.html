@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html lang="ko" mxlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="viewDetailsFragmentHead">
     <link rel="stylesheet" href="/styles/main/diary.css" />
     <link rel="stylesheet" href="/styles/main/details.css" />
+    <link rel="stylesheet" href="/styles/main/detail.css" />
 </head>
 
 <body>
@@ -14,24 +14,41 @@
             </div>
             <div class="arrow-container">
                 <a class="arrow-prev" href="/diary" style="cursor: pointer;"></a>
-                </div>
+            </div>
         </div>
-
+        <hr/>
+        <div class="mornings">
+            <div class="morning-title">아침</div>
+                <p>칼로리: <span th:text="${caloriesGroup1}"></span>g</p>
+                <p>탄수화물: <span th:text="${carbsGroup1}"></span>g</p>
+                <p>단백질: <span th:text="${proteinGroup1}"></span>g</p>
+                <p>지방: <span th:text="${fatGroup1}"></span>g</p>
+                <hr />
+        </div>
+        <div class="lunchs">
+            <div class="lunch-title">점심</div>
+                <p>칼로리: <span th:text="${caloriesGroup2}"></span>g</p>
+                <p>탄수화물: <span th:text="${carbsGroup2}"></span>g</p>
+                <p>단백질: <span th:text="${proteinGroup2}"></span>g</p>
+                <p>지방: <span th:text="${fatGroup2}"></span>g</p>
+                <hr />
+        </div>
+        <div class="dinners">
+            <div class="dinner-title">저녁</div>
+                <p>칼로리: <span th:text="${caloriesGroup3}"></span>g</p>
+                <p>탄수화물: <span th:text="${carbsGroup3}"></span>g</p>
+                <p>단백질: <span th:text="${proteinGroup3}"></span>g</p>
+                <p>지방: <span th:text="${fatGroup3}"></span>g</p>
+                <hr />
+        </div>
+        <div class="snacks">
+            <div class="snack-title">간식</div>
+                <p>칼로리: <span th:text="${caloriesGroup4}"></span>g</p>
+                <p>탄수화물: <span th:text="${carbsGroup4}"></span>g</p>
+                <p>단백질: <span th:text="${proteinGroup4}"></span>g</p>
+                <p>지방: <span th:text="${fatGroup4}"></span>g</p>
+        </div>
     </div>
-    <script>
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-    
-        var foodName = getParameterByName('foodName');
-        var otherData = getParameterByName('otherData');
-
-    </script>
 </body>
+
 </html>

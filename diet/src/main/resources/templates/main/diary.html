@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
     <script type="text/javascript" charset="utf-8"
         src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="province">
                                 <p><span id="width-text1s" th:text="${allFat}"></span></p>
-                                <span id="width-text3"> g/ [[${session.fat}]]g</span>
+                                <span id="width-text3"> g / [[${session.fat}]]g</span>
                             </div>
                         </div>
                     </div>
@@ -74,8 +74,9 @@
                     <div class="morning-container">
                         <img src="styles/img/moning.png">
                         <div class="morning">아침
-                        
-                            <span id="morning" th:text="${caloriesSumGroup1 != null ? caloriesSumGroup1 + ' kcal' : '0kcal'}"></span>
+
+                            <span id="morning"
+                                th:text="${caloriesSumGroup1 != null ? caloriesSumGroup1 + ' kcal' : '0kcal'}"></span>
                         </div>
                         <div class="moning-btn">
                             <a class="btn" id="morning-btn" th:href="@{/search(mealType=1)}"></a>
@@ -84,7 +85,8 @@
                     <div class="lunch-container">
                         <img src="styles/img/lunch.png">
                         <div class="lunch">점심
-                            <span id="lunch" th:text="${caloriesSumGroup2 != null ? caloriesSumGroup2 + ' kcal' : '0kcal'}"></span>
+                            <span id="lunch"
+                                th:text="${caloriesSumGroup2 != null ? caloriesSumGroup2 + ' kcal' : '0kcal'}"></span>
                         </div>
                         <div class="lunch-btn">
                             <a class="btn" id="lunch-btn" th:href="@{/search(mealType=2)}"></a>
@@ -93,7 +95,8 @@
                     <div class="dinner-container">
                         <img src="styles/img/dinner.png">
                         <div class="dinner">저녁
-                            <span id="dinner" th:text="${caloriesSumGroup3 != null ? caloriesSumGroup3 + ' kcal' : '0kcal'}"></span>
+                            <span id="dinner"
+                                th:text="${caloriesSumGroup3 != null ? caloriesSumGroup3 + ' kcal' : '0kcal'}"></span>
                         </div>
                         <div class="dinner-btn">
                             <a class="btn" id="dinner-btn" th:href="@{/search(mealType=3)}"></a>
@@ -102,7 +105,8 @@
                     <div class="snack-container">
                         <img src="styles/img/snack.png" style="top: 19px;">
                         <div class="snack">간식
-                            <span id="snack" th:text="${caloriesSumGroup4 != null ? caloriesSumGroup4 + ' kcal' : '0kcal'}"></span>
+                            <span id="snack"
+                                th:text="${caloriesSumGroup4 != null ? caloriesSumGroup4 + ' kcal' : '0kcal'}"></span>
                         </div>
                         <div class="snack-btn">
                             <a class="btn" id="snack-btn" th:href="@{/search(mealType=4)}"></a>
@@ -119,7 +123,7 @@
                             <a class="water-btn" type="button"></a>
                         </div>
                     </div>
-                    <div class="bottle" id="bottle2"> 
+                    <div class="bottle" id="bottle2">
                         <div class="water-level" id="water-level2">
                             <a class="water-btn2" type="button"></a>
                         </div>
@@ -161,6 +165,61 @@
     <script src="/scripts/chart.js"></script>
     <script src="/scripts/search.js"></script>
     <script src="/scripts/water.js"></script>
+
+    <script th:inline="javascript">
+
+        var sessionKcal = /*[[${session.kcal}]]*/;
+        var allKcal = /*[[${allKcal}]]*/;
+        console.log(sessionKcal, allKcal);
+        // 차트 데이터 업데이트 
+        var num = allKcal;
+        var max = sessionKcal;
+
+        if (num > max) {
+            num = max;
+        }
+
+        var data = {
+            labels: ["섭취한 칼로리"],
+            datasets: [
+                {
+                    data: [num, sessionKcal - num],
+                    backgroundColor: ["#FF6384", "#DDDDDD"],
+                    hoverBackgroundColor: ["#FF6384", "#DDDDDD"]
+                }
+            ]
+        };
+
+        // 차트 설정 및 업데이트
+        var ctx = document.getElementById("chart8").getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                elements: {
+                    center: {
+                        text: num,
+                        fontColor: "#FF0000",
+                        fontSize: 20,
+                        fontStyle: 'Helvetica',
+                        sidePadding: 0
+                    }
+                },
+                maintainAspectRatio: false,
+                cutoutPercentage: 90,
+                animation: false,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI
+            }
+        });
+        function percentage(current, max) {
+            return (current / max) * 100 + '%';
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+
+.container{
+    height: 175vh;
+}
+
+.mornings,
+.lunchs,
+.dinners,
+.snacks{
+    color: white;
+    font-size: 30px;
+}
+.morning-title,
+.lunch-title,
+.dinner-title,
+.snack-title{
+    display: flex;
+    justify-content: center;
+}

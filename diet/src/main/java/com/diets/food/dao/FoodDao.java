@@ -3,6 +3,7 @@ package com.diets.food.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -66,9 +67,9 @@ public class FoodDao {
         return jdbcTemplate.queryForObject(sql, Double.class, userId, mealType);
     
     }
-    public Double getmealTypedata(int userId, int mealType) {
+    public Map<String, Object> getMealTypeData(int userId, int mealType) {
         String sql = "select sum(calorie) AS all_kcal,sum(carbohydrate) AS all_carbs,sum(protein) AS all_protein,sum(fat) AS all_fat from savefoods WHERE user_id = ? AND mealType = ?";
-        return jdbcTemplate.queryForObject(sql, Double.class, userId, mealType);
+        return jdbcTemplate.queryForMap(sql, userId, mealType);
     
     }
 

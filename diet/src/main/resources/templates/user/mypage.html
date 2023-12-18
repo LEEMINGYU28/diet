@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="info-container">
-            <div class="name" th:if="${session.userName != null}">[[${session.userName}]] 
+            <div class="name" th:if="${session.userName != null}">[[${session.userName}]]
             </div>
             <div class="birth-date" th:if="${session.age != null}">[[${session.age}]] (만)세
             </div>
@@ -28,11 +28,15 @@
             </div>
             <div class="logout">
                 <form action="/logout" method="post" class="logout-form">
-                <a><button class="logout-btn">로그아웃 </button></a>
-            </form>
+                    <a onclick="clearWaterSessionData();">
+                        <button class="logout-btn">로그아웃
+                        </button>
+                    </a>
+                </form>
             </div>
         </div>
     </div>
+    <script src="/scripts/water.js"></script>
 </body>
 
 </html>

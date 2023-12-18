@@ -3,6 +3,7 @@ package com.diets.food.service;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class FoodService {
 	public Double getCaloriesSum(int userId, int mealType) {
 		return foodDao.getCaloriesSum(userId, mealType);
 	}
-	public Double getmealTypedata(int userId, int mealType) {
-		return foodDao.getmealTypedata(userId, mealType);
+	public Map<String, Object> getMealTypeData(int userId, int mealType) {
+		return foodDao.getMealTypeData(userId, mealType);
 	}
 }
