@@ -69,10 +69,6 @@ public class FoodController {
 	    int userId = Integer.parseInt(session.getAttribute("userId").toString());
 
 	    List<Food> foods = foodService.getFoods(userId);
-        Integer sessionCarbs = (Integer) session.getAttribute("carbs");
-        if (sessionCarbs == null) {
-            sessionCarbs = 0;
-        }
 
 	    if (!foods.isEmpty()) {
 	        Food totalFood = foods.get(0);
