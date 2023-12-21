@@ -21,8 +21,8 @@
 - Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'age' in 'field list
 - java.lang.IllegalStateException: Cannot get a NUMERIC value from a STRING cell 엑셀 파일에서 값을 읽어오려 하는데,엑셀 파일의 셀이 숫자 형식이 아니라 문자열 형식으로 저장되어 있을때 발생
 ### 해결 방법
-userDAO 부분에 Autowired 해주지않아서 오류발생하여 빠르게 해결
-컬럼에서 AGE를 찾을수 없다고 뜬다. DB테이블에도 정확하게 만들어 놨기에 APPLICATION을 확인 username이 바뀌지 않아 발생한 오류 바꿔서 해결
-DataFormatter dataFormatter = new DataFormatter 방식으로 셀값을 문자열로 읽어오도록 하는 방법을 사용하여 정상적으로 오류 해결
-배포하는 과정에서도 여러가지 문제가 있었다.
-bootWar 방식을 사용해보고 tomcat의 버전을 바꾸고 jdk버전도 바꾸는 등 여러가지 방법을 시도하였더니 해결되었다.
+- userDAO 부분에 Autowired 해주지않아서 오류발생하여 빠르게 해결
+- 컬럼에서 AGE를 찾을수 없다고 뜬다. DB테이블에도 정확하게 만들어 놨기에 APPLICATION을 확인 username이 바뀌지 않아 발생한 오류 바꿔서 해결
+- DataFormatter dataFormatter = new DataFormatter 방식으로 셀값을 문자열로 읽어오도록 하는 방법을 사용하여 정상적으로 오류 해결
+- 배포하는 과정에서도 여러가지 문제가 있었다.
+- bootWar 방식을 사용해보고 tomcat의 버전을 바꾸고 jdk버전도 바꾸는 등 여러가지 방법을 시도하였더니 해결되었다.
